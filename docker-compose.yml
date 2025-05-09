@@ -1,0 +1,30 @@
+version: '3'
+services:
+  ### Posgres database for Courses
+  db-courses:
+    container_name: db-courses
+    image: postgres:15.2
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: coursesDb
+      POSTGRES_USER: aron
+      POSTGRES_PASSWORD: U17t152337!3
+    ports:
+      - 5433:5432
+    expose:
+      - 5432
+
+  ### MySQL database for Students
+  db-students:
+    container_name: db-students
+    image: mysql:8.0.33
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: studentDb
+      MYSQL_USER: aron
+      MYSQL_PASSWORD: 475T039#4v47
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3307:3306
+    expose:
+      - 3306
